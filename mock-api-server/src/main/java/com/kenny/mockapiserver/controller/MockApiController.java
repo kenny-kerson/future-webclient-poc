@@ -1,4 +1,4 @@
-package com.kenny.futurewebclientpoc.external;
+package com.kenny.mockapiserver.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,8 +9,7 @@ import java.time.format.DateTimeFormatter;
 
 @RestController
 @Slf4j
-public class ExternalMockController {
-
+public class MockApiController {
     @GetMapping("/external/mock_api")
     public String getTimeStamp() {
         log.warn("# ExternalMockController getTimeStamp() START!!");
@@ -21,7 +20,7 @@ public class ExternalMockController {
             throw new RuntimeException(e);
         }
 
-        log.warn(" # External Mock API Timestamp : {}", LocalDateTime.now());
+        log.warn("# External Mock API Timestamp : {}", LocalDateTime.now());
         return LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME);
     }
 }
