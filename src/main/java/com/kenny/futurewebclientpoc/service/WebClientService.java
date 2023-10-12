@@ -29,4 +29,5 @@ public class WebClientService {
                 .bodyToMono(FutureDTO.Out.class)
                 .toFuture()
         ;
+    }
 }
