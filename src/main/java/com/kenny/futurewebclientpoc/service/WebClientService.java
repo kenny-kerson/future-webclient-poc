@@ -5,7 +5,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
-import reactor.core.publisher.Mono;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -30,5 +29,4 @@ public class WebClientService {
                 .bodyToMono(FutureDTO.Out.class)
                 .toFuture()
         ;
-    }
 }
