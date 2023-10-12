@@ -13,6 +13,8 @@ public class ExternalMockController {
 
     @GetMapping("/external/mock_api")
     public String getTimeStamp() {
+        log.warn("# ExternalMockController getTimeStamp() START!!");
+
         try {
             Thread.sleep(10000L);
         } catch (InterruptedException e) {

@@ -20,6 +20,8 @@ public class FutureController {
 
     @GetMapping("/sync_nonblocking/{startDateTime}")
     public CompletableFuture<FutureDTO.Out> getExternalApiResponse( @PathVariable final String startDateTime ) {
+        log.warn("# FutureController getExternalApiResponse() START!!");
+
         return webClientService.api(startDateTime);
     }
 }
