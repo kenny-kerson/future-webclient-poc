@@ -23,7 +23,7 @@
 비기능 요건
 1. (REQ-1) Controller Method 리턴타입은 비동기 반환타입으로 구현한다
 2. (REQ-2) 외부API 역할을 하는 Mock API를 구현한다
-3. (REQ-2) 외부API 호출은 Async-Nonblocking으로 구현한다
+3. (REQ-3) 외부API 호출은 Async-Nonblocking으로 구현한다
 
 Out of Scope
 1. Service Layer의 비지니스 로직은 구현하지 않는다
