@@ -1,1 +1,14 @@
-
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'    # 모든 Actuator 엔드포인트를 노출한다
+  metrics:
+    enable.all: true
+    enable.tomcat: true
+    export:
+      prometheus:
+        enabled: true
+  endpoint:
+    prometheus:
+      enabled: true

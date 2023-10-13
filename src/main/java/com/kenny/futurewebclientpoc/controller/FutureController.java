@@ -2,7 +2,6 @@ package com.kenny.futurewebclientpoc.controller;
 
 import com.kenny.futurewebclientpoc.controller.dto.FutureDTO;
 import com.kenny.futurewebclientpoc.service.WebClientService;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,6 +21,13 @@ public class FutureController {
     public CompletableFuture<FutureDTO.Out> getExternalApiResponse( @PathVariable final String startDateTime ) {
         log.warn("# FutureController getExternalApiResponse() START!!");
 
-        return webClientService.api(startDateTime);
+        return webClientService.nonblockingApi(startDateTime);
+    }
+
+    @GetMapping("/sync_blocking/{startDateTime}")
+    public FutureDTO.Out getExternalApiResponseBlocking( @PathVariable final String startDateTime ) {
+        log.warn("# FutureController getExternalApiResponseBlocking() START!!");
+
+        return webClientService.blockingApi(startDateTime);
     }
 }
