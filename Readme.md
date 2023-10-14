@@ -45,3 +45,4 @@ Out of Scope
 
 ## Material References
 1. [Is Mono.toFuture() blocking?](https://stackoverflow.com/questions/58504527/is-mono-tofuture-blocking)
+2. [WebClient metric이 'http.client.requests'로 노출되지 않는 현상](https://github.com/spring-projects/spring-boot/issues/35698)
