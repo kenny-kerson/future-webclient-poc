@@ -47,3 +47,4 @@ Out of Scope
 1. [Is Mono.toFuture() blocking?](https://stackoverflow.com/questions/58504527/is-mono-tofuture-blocking)
 1. [HttpClient의 Actuator 모니터링](https://gunju-ko.github.io/spring/2018/12/19/SpringMircometer.html)
 1. [WebClient metric이 'http.client.requests'로 노출되지 않는 현상](https://github.com/spring-projects/spring-boot/issues/35698)
+1. [WebClient 설정](https://lasel.kr/archives/740)
