@@ -25,6 +25,7 @@
 2. (REQ-2) 외부API 역할을 하는 Mock API를 구현한다
 3. (REQ-3) 외부API 호출은 Async-Nonblocking으로 구현한다
 4. (REQ-4) 메인 워커 쓰레드풀, netty 쓰레드풀을 모니터링하는 환경을 구성한다
+5. (REQ-5) CompletableFuture에 대한 learning test( 학습테스트 ) 코드를 구성한다
 
 Out of Scope
 1. Service Layer의 비지니스 로직은 구현하지 않는다
