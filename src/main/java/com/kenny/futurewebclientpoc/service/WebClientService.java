@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.TimeUnit;
 
 @Service
 @Slf4j
@@ -29,7 +30,19 @@ public class WebClientService {
                 .map(output -> FutureDTO.Out.builder()
                         .endDateTime(output)
                         .build())
-                .toFuture();
+                .toFuture()
+                .thenApply(result -> {
+                        log.warn("# result : {}", result);
+                        return result;
+                })
+                .orTimeout(20L, TimeUnit.SECONDS)
+                .exceptionally(e -> {
+                        log.warn("# CompletableFuture error : ", e);
+                        return FutureDTO.Out.builder()
+                                .endDateTime("error")
+                                .build();
+                })
+        ;
 
         log.warn("# api call end & return ");
         return apiOutput;
