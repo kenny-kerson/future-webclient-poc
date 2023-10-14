@@ -32,11 +32,14 @@ public class WebClientService {
                         .build())
                 .toFuture()
                 .thenApply(result -> {
+                        // Future의 결과를 받아 새로운 결과를 생성한다.
                         log.warn("# result : {}", result);
                         return result;
                 })
+                // 이 시간동안 Future가 완료되지 않으면 익셉션을 발생시킨다.
                 .orTimeout(20L, TimeUnit.SECONDS)
                 .exceptionally(e -> {
+                        // Future에서 익셉션이 발생했을때 동작할 Callback을 정의한다. 즉, 오류가 발생했을때 동작하는 로직을 작성한다.
                         log.warn("# CompletableFuture error : ", e);
                         return FutureDTO.Out.builder()
                                 .endDateTime("error")
