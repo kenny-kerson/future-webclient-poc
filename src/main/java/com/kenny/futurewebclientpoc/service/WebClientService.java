@@ -26,9 +26,9 @@ public class WebClientService {
         final CompletableFuture<FutureDTO.Out> apiOutput = webClient.get()
                 .uri("/external/mock_api")
                 .retrieve()
-                .bodyToMono(String.class)
+                .bodyToMono(Long.class)
                 .map(output -> FutureDTO.Out.builder()
-                        .endDateTime(output)
+                        .second(String.valueOf(output))
                         .build())
                 .toFuture()
                 .thenApply(result -> {
@@ -42,7 +42,7 @@ public class WebClientService {
                         // Future에서 익셉션이 발생했을때 동작할 Callback을 정의한다. 즉, 오류가 발생했을때 동작하는 로직을 작성한다.
                         log.warn("# CompletableFuture error : ", e);
                         return FutureDTO.Out.builder()
-                                .endDateTime("error")
+                                .second("error")
                                 .build();
                 })
         ;
@@ -57,9 +57,9 @@ public class WebClientService {
         final FutureDTO.Out apiOutput = webClient.get()
                 .uri("/external/mock_api")
                 .retrieve()
-                .bodyToMono(String.class)
+                .bodyToMono(Long.class)
                 .map(output -> FutureDTO.Out.builder()
-                        .endDateTime(output)
+                        .second(String.valueOf(output))
                         .build())
                 .block();
 

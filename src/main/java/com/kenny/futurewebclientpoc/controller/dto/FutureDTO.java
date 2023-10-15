@@ -10,6 +10,6 @@ public class FutureDTO {
     @Builder
     @ToString
     public static class Out {
-        private final String endDateTime;
+        private final String second;
     }
 }
