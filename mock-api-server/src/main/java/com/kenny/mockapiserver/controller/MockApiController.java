@@ -6,21 +6,24 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Random;
 
 @RestController
 @Slf4j
 public class MockApiController {
     @GetMapping("/external/mock_api")
-    public String getTimeStamp() {
+    public Long getTimeStamp() {
         log.warn("# ExternalMockController getTimeStamp() START!!");
 
+        final long second = new Random().nextInt(Integer.MAX_VALUE) % 10L;
+
         try {
-            Thread.sleep(10000L);
+            Thread.sleep(second * 1000L);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
 
-        log.warn("# External Mock API Timestamp : {}", LocalDateTime.now());
-        return LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME);
+        log.warn("# External Mock API second : {}", second);
+        return second;
     }
 }
