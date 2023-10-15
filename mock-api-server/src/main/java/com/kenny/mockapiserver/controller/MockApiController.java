@@ -12,7 +12,7 @@ import java.util.Random;
 @Slf4j
 public class MockApiController {
     @GetMapping("/external/mock_api")
-    public String getTimeStamp() {
+    public Long getTimeStamp() {
         log.warn("# ExternalMockController getTimeStamp() START!!");
 
         final long second = new Random().nextInt() % 10L;
@@ -23,7 +23,7 @@ public class MockApiController {
             throw new RuntimeException(e);
         }
 
-        log.warn("# External Mock API Timestamp : {}", LocalDateTime.now());
-        return LocalDateTime.now().format(DateTimeFormatter.ISO_DATE_TIME);
+        log.warn("# External Mock API second : {}", second);
+        return second;
     }
 }
