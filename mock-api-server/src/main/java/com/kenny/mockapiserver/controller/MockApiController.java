@@ -15,7 +15,7 @@ public class MockApiController {
     public Long getTimeStamp() {
         log.warn("# ExternalMockController getTimeStamp() START!!");
 
-        final long second = new Random().nextInt() % 10L;
+        final long second = new Random().nextInt(Integer.MAX_VALUE) % 10L;
 
         try {
             Thread.sleep(second * 1000L);
