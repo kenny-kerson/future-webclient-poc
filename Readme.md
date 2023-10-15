@@ -24,6 +24,8 @@
 1. (REQ-1) Controller Method 리턴타입은 비동기 반환타입으로 구현한다
 2. (REQ-2) 외부API 역할을 하는 Mock API를 구현한다
 3. (REQ-3) 외부API 호출은 Async-Nonblocking으로 구현한다
+4. (REQ-4) 메인 워커 쓰레드풀, netty 쓰레드풀을 모니터링하는 환경을 구성한다
+5. (REQ-5) CompletableFuture에 대한 learning test( 학습테스트 ) 코드를 구성한다
 
 Out of Scope
 1. Service Layer의 비지니스 로직은 구현하지 않는다
@@ -43,4 +45,7 @@ Out of Scope
 
 ## Material References
 1. [Is Mono.toFuture() blocking?](https://stackoverflow.com/questions/58504527/is-mono-tofuture-blocking)
-2. [Spring Boot 모니터링 prometheus grafana docker](https://velog.io/@roycewon/Spring-boot-%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81Prometheus-Grafana-docker)
+1. [Spring Boot 모니터링 prometheus grafana docker](https://velog.io/@roycewon/Spring-boot-%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81Prometheus-Grafana-docker)
+1. [HttpClient의 Actuator 모니터링](https://gunju-ko.github.io/spring/2018/12/19/SpringMircometer.html)
+1. [WebClient metric이 'http.client.requests'로 노출되지 않는 현상](https://github.com/spring-projects/spring-boot/issues/35698)
+1. [WebClient 설정](https://lasel.kr/archives/740)
