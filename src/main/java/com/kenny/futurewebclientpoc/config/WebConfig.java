@@ -16,12 +16,13 @@ import reactor.netty.resources.ConnectionProvider;
 @Slf4j
 public class WebConfig {
 
-    @Bean
-    public WebClient.Builder webClientBuilder() {
-        log.warn("# WebClient.Builder Bean Creation");
-
-        return WebClient.builder();
-    }
+// WebClient.builder를 custom 하게되면, Spring Boot AutoConfiguration을 통한 metric 수집을 못해서 일단 막아둠
+//    @Bean
+//    public WebClient.Builder webClientBuilder() {
+//        log.warn("# WebClient.Builder Bean Creation");
+//
+//        return WebClient.builder();
+//    }
 
 //    @Bean
 //    public WebClient webClient(final MeterRegistry meterRegistry) {

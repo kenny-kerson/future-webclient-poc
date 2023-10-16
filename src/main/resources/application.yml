@@ -1,3 +1,8 @@
+server:
+  tomcat:
+    mbeanregistry:
+      enabled: true   # actuator에서 tomcat.threads.xxx 메트릭을 확인하기 위한 옵션
+
 management:
   endpoints:
     web:
