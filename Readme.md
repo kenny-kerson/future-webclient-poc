@@ -32,15 +32,10 @@ Out of Scope
 2. Circuit Breaker를 통한 Failover 및 Fallback은 구현하지 않는다
 3. 외부API호출 이외에, DB연동 등 추가적인 IO는 발생하지 않는다고 가정한다
 
-
----
-
-## Context
-
 ---
 
 ## Solution
-
+![diagram.png](img%2Fdiagram.png)
 ---
 
 ## Material References
